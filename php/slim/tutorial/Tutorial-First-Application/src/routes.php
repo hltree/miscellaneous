@@ -21,6 +21,12 @@ return function (App $app) {
     $app->post('/tickets', function(Request $request, Response $response){
         $subject = $request->getParsedBodyParam('subject');
         // ここに保存の処理を書く
+        $sql = 'INSERT INTO tickets (subject) values (:subject)';
+        $stmt = $this->db->prepare($sql);
+        $result = $stmt->execute(['subject' => $subject]);
+        if(!$result) {
+            throw new \Exception('could not save the ticket');
+        }
         // 保存が正常にできたら一覧ページへリダイレクトする
         return $response->withRedirect('/tickets');
     });
