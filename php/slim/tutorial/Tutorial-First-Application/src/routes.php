@@ -16,7 +16,7 @@ return function (App $app) {
             $tickets[] = $row;
         }
         $data = ['tickets' => $tickets];
-        return $this->renderer->render($response, 'tasks/index.phtml', $data);
+        return $this->renderer->render($response, 'tickets/index.phtml', $data);
     });
 
     // 新規作成用フォームの表示

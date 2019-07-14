@@ -22,8 +22,8 @@ return function (App $app) {
 
     // database
     $container['db'] = function($c) {
-        $db = $c['setting']['db'];
-        $pdo = new PDO('mysql:host=' . $db['host'] . '; dbname=' . $db['dbname'],
+        $db = $c['settings']['db'];
+        $pdo = new PDO('mysql:host=' . $db['host'] . ';dbname=' . $db['dbname'] . ';unix_socket=/tmp/mysql.sock',
             $db['user'], $db['pass']);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
