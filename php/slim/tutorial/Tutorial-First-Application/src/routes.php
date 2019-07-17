@@ -8,7 +8,7 @@ return function (App $app) {
     $container = $app->getContainer();
 
     // 一覧表示
-    $app->get('/tickets',function(Request $request, Response $response){
+    $app->get('/tickets', function(Request $request, Response $response){
         $sql = 'SELECT * FROM tickets';
         $stmt = $this->db->query($sql);
         $tickets = [];
@@ -48,7 +48,7 @@ return function (App $app) {
             return $response->withStatus(404)->write('not found');
         }
         $data = ['ticket' => $ticket];
-        return $this->renderer->render($response, 'tasks/show.phtml', $data);
+        return $this->renderer->render($response, 'tickets/show.phtml', $data);
     });
 
     // 編集用フォームの表示
