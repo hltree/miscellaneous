@@ -79,7 +79,7 @@ function reloadPreview(event) {
     );
 }
 
-Concrete.event.bind('autonav.edit.open', function() {
+Concrete.event.bind('edit.open', function() {
     container = $('div.autonav-form');
     preview_container = $('div.autonav-preview');
     preview_loader = container.find('div.loader');

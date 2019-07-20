@@ -224,5 +224,5 @@ $info += [
     }
 </style>
 <script type="application/javascript">
-    Concrete.event.publish('autonav.edit.open');
+    Concrete.event.publish('edit.open');
 </script>

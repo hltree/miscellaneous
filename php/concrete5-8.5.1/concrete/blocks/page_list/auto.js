@@ -133,7 +133,7 @@ var pageList ={
     }
 };
 
-Concrete.event.bind('pagelist.edit.open', function() {
+Concrete.event.bind('edit.open', function() {
 
     pageList.init();
 

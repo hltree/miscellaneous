@@ -559,7 +559,7 @@ $form = Loader::helper('form/page_selector');
 
 </style>
 <script type="application/javascript">
-    Concrete.event.publish('pagelist.edit.open');
+    Concrete.event.publish('edit.open');
     $(function() {
         $('input[name=topicFilter]').on('change', function() {
             if ($(this).val() == 'related') {

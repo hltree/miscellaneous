@@ -6200,7 +6200,7 @@ $.ui.fancytree._FancytreeNodeClass.prototype.editStart = function(){
  * [ext-edit] Stop inline editing.
  * @param {Boolean} [applyChanges=false] false: cancel edit, true: save (if modified)
  * @alias FancytreeNode#editEnd
- * @requires jquery.fancytree.edit.js
+ * @requires edit.js
  */
 $.ui.fancytree._FancytreeNodeClass.prototype.editEnd = function(applyChanges, _event){
 	var newVal,
@@ -6278,7 +6278,7 @@ $.ui.fancytree._FancytreeNodeClass.prototype.editEnd = function(applyChanges, _e
 * @param {String} [mode='child'] 'before', 'after', or 'child'
 * @param {Object} [init] NodeData (or simple title string)
 * @alias FancytreeNode#editCreateNode
-* @requires jquery.fancytree.edit.js
+* @requires edit.js
 * @since 2.4
 */
 $.ui.fancytree._FancytreeNodeClass.prototype.editCreateNode = function(mode, init){
@@ -6315,7 +6315,7 @@ $.ui.fancytree._FancytreeNodeClass.prototype.editCreateNode = function(mode, ini
  *
  * @returns {FancytreeNode | null}
  * @alias Fancytree#isEditing
- * @requires jquery.fancytree.edit.js
+ * @requires edit.js
  */
 $.ui.fancytree._FancytreeClass.prototype.isEditing = function(){
 	return this.ext.edit.currentNode;
@@ -6326,7 +6326,7 @@ $.ui.fancytree._FancytreeClass.prototype.isEditing = function(){
  * [ext-edit] Check if this node is in edit mode.
  * @returns {Boolean} true if node is currently beeing edited
  * @alias FancytreeNode#isEditing
- * @requires jquery.fancytree.edit.js
+ * @requires edit.js
  */
 $.ui.fancytree._FancytreeNodeClass.prototype.isEditing = function(){
 	return this.tree.ext.edit.currentNode === this;
