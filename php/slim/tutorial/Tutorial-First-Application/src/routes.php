@@ -53,6 +53,15 @@ return function (App $app) {
 
     // 編集用フォームの表示
     $app->get('/tickets/{id}/edit', function(Request $request, Response $response, array $args){
+        $sql = 'SELECT * FROM tickets WHERE id = :id';
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['id' => $args['id']]);
+        $ticket = $stmt->fetch();
+        if(!$ticket) {
+            return $response->WithStatus(404)->write('not found');
+        }
+        $data = ['ticket' => $ticket];
+        return $this->renderer->render($response, 'tasks/edit.phtml', $data);
     });
 
     // 更新
