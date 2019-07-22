@@ -81,6 +81,16 @@ return function (App $app) {
 
     // 削除
     $app->delete('/tickets/{id}', function(Request $request, Response $response, array $args){
+        $sql = 'SELECT * FROM tickets WHERE id = :id';
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['id' => $args['id']]);
+        $ticket = $stmt->fetch();
+        if(!$ticket) {
+            return $response->withStatus(404)->write('not found');
+        }
+        $stmt = $this->db->prepare('DELETE FROM tickets WHERE id = :id');
+        $stmt->execute(['id' => $ticket['id']]);
+        return $response->withRedirect("/tickets");
     });
 
 
