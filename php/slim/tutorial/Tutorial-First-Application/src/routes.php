@@ -3,21 +3,13 @@
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
+use Classes\Controller\TicketsController;
 
 return function (App $app) {
     $container = $app->getContainer();
 
     // 一覧表示
-    $app->get('/tickets', function(Request $request, Response $response){
-        $sql = 'SELECT * FROM tickets';
-        $stmt = $this->db->query($sql);
-        $tickets = [];
-        while($row = $stmt->fetch()) {
-            $tickets[] = $row;
-        }
-        $data = ['tickets' => $tickets];
-        return $this->renderer->render($response, 'tickets/index.phtml', $data);
-    });
+    $app->get('/tickets', TicketsController::class . ':index');
 
     // 新規作成用フォームの表示
     $app->get('/tickets/create', function(Request $request, Response $response){
@@ -25,18 +17,7 @@ return function (App $app) {
     });
 
     // 新規作成
-    $app->post('/tickets', function(Request $request, Response $response){
-        $subject = $request->getParsedBodyParam('subject');
-        // ここに保存の処理を書く
-        $sql = 'INSERT INTO tickets (subject) values (:subject)';
-        $stmt = $this->db->prepare($sql);
-        $result = $stmt->execute(['subject' => $subject]);
-        if(!$result) {
-            throw new \Exception('could not save the ticket');
-        }
-        // 保存が正常にできたら一覧ページへリダイレクトする
-        return $response->withRedirect('/tickets');
-    });
+    $app->post('/tickets', TicketsController::class . ':create');
 
     // 表示
     $app->get('/tickets/{id}', function(Request $request, Response $response, array $args){
