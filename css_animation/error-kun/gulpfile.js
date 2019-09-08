@@ -4,7 +4,9 @@ const
     notify = require('gulp-notify'),
     plumber = require('gulp-plumber'),
     pug = require('gulp-pug'),
-    sass = require('gulp-sass');
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
+    uglify = require('gulp-uglify-es').default;
 
 gulp.task('compile-scss', () => {
     return (
@@ -22,17 +24,28 @@ gulp.task('compile-pug', () => {
             .src('./dev/pug/*.pug')
             .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
             .pipe(pug())
-            .pipe(gulp.dest('./build/view'))
+            .pipe(gulp.dest('./'))
+    );
+});
+
+gulp.task('compile-js', () => {
+    return (
+        gulp
+            .src(['./dev/js/*.js'])
+            .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+            .pipe(uglify())
+            .pipe(rename({extname: '.min.js'}))
+            .pipe(gulp.dest('./build/js'))
     );
 });
 
 gulp.task('browser-sync', () => {
     browserSync({
         server: {
-            baseDir: './build/view',
-            startPath: 'index.html'
+            baseDir: './',
         }
     });
+    gulp.watch('./dev/js/*', gulp.series(gulp.parallel('compile-js', 'reload')));
     gulp.watch('./dev/scss/*', gulp.series(gulp.parallel('compile-scss', 'reload')));
     gulp.watch('./dev/pug/*', gulp.series(gulp.parallel('compile-pug', 'reload')));
 });
@@ -41,4 +54,4 @@ gulp.task('reload', (done) => {
    done();
 });
 
-gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'compile-pug', 'compile-scss')));
+gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'compile-pug', 'compile-scss', 'compile-js')));

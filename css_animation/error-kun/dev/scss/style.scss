@@ -1,12 +1,46 @@
 .error-kun {
-
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+    border-width: 0 60px 60px 60px;
+    height: 0;
+    position: relative;
+    width: 0;
+    &-eyes {
+        background: #fff;
+        border: 2px solid #000;
+        border-radius: 50%;
+        height: 20px;
+        position: absolute;
+        width: 20px;
+        &:before {
+            background-color: #000;
+            border-radius: 50%;
+            content: '';
+            left: 50%;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+        }
+        &._left {
+            left: 0;
+            top: 30px;
+        }
+        &._right {
+            right: 0;
+            top: 30px;
+        }
+    }
 }
 .inner {
-
+    background-color: #ccc;
+    height: 80%;
+    margin: auto;
+    width: 80%;
 }
 .wrap {
-    background-color: #ccc;
-    height: 60vh;
-    margin: auto;
-    width: 60vw;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
 }
