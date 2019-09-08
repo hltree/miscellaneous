@@ -11,7 +11,7 @@ Node v12.3.1+
 ```
 npm install
 
-npx gulp
+npm run start
 ```
 
 ## THANKS
