@@ -29,11 +29,16 @@ gulp.task('compile-pug', () => {
 gulp.task('browser-sync', () => {
     browserSync({
         server: {
-            baseDir: './build/view'
+            baseDir: './build/view',
+            startPath: 'index.html'
         }
     });
-    gulp.watch('./dev/scss/*', gulp.task('compile-scss'));
-    gulp.watch('./dev/pug/*', gulp.task('compile-pug'));
+    gulp.watch('./dev/scss/*', gulp.series(gulp.parallel('compile-scss', 'reload')));
+    gulp.watch('./dev/pug/*', gulp.series(gulp.parallel('compile-pug', 'reload')));
+});
+gulp.task('reload', (done) => {
+   browserSync.reload();
+   done();
 });
 
 gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'compile-pug', 'compile-scss')));
