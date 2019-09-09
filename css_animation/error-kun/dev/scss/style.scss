@@ -34,9 +34,13 @@
     }
 }
 .inner {
+    align-items: center;
     background-color: #ccc;
+    display: flex;
     height: 80%;
+    justify-content: center;
     margin: auto;
+    overflow: hidden;
     width: 80%;
 }
 .wrap {
