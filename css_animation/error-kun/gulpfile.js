@@ -11,7 +11,9 @@ const
 gulp.task('compile-scss', () => {
     return (
         gulp
-            .src('./dev/scss/style.scss')
+            .src('./dev/scss/style.scss', {
+                sourcemaps: true
+            })
             .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
             .pipe(sass())
             .pipe(gulp.dest('./build/css'))
@@ -31,7 +33,9 @@ gulp.task('compile-pug', () => {
 gulp.task('compile-js', () => {
     return (
         gulp
-            .src(['./dev/js/*.js'])
+            .src('./dev/js/*.js', {
+                sourcemaps: true
+            })
             .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
             .pipe(uglify())
             .pipe(rename({extname: '.min.js'}))

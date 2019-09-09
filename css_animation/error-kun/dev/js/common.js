@@ -1,6 +1,2 @@
-import $ from 'jquery';
-import tmax from 'gsap/TweenMax';
+// moduleの読み込みはindexのほうで
 
-/*$('.error-kun').on('click',function(){
-    $(this).css('background-color', 'red');
-});*/
