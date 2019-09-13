@@ -1,0 +1,19 @@
+.block {
+    height : 100px;
+    width: 100px;
+}
+
+.inner {
+    background: #ccc;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.wrap {
+    height: 100vh;
+    margin: auto;
+    overflow-x: scroll;
+    width: 1000px;
+}
