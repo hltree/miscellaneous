@@ -5,7 +5,7 @@ block.each(function () {
         left = Math.floor(Math.random() * 100);
 
     $(this).css({
-        'position' : 'absolute',
+        'position': 'absolute',
         'left': left + '%',
         'top': top + '%'
     });
@@ -18,7 +18,7 @@ block.each(function () {
                 TweenMax.to($(this), .1, {
                     css: {'background': 'radial-gradient(circle at center, red ' + x + '%, blue, green 100%)'},
                     onComplete: () => {
-                        if(x == 100) {
+                        if (x == 100) {
                             x = 0;
                         }
                         x++;
@@ -27,5 +27,11 @@ block.each(function () {
                 });
             };
         trans_color();
+    } else if ($(this).hasClass('js-rotate')) {
+        TweenMax.to($(this), 2, {rotation: 360, ease: Power0.easeNone, repeat: -1});
+    } else if ($(this).hasClass('js-scale')) {
+        TweenMax.to($(this), 2, {
+            scale: 1.5, repeat: -1
+        });
     }
 });
