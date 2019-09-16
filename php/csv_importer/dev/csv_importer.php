@@ -5,17 +5,31 @@ namespace CsvImporter;
 class CsvImporter
 {
     public
-        $file,
-        $file_path;
+        $files = [];
 
-    public function __construct($file)
+    public function __construct()
     {
-        $this->file = $file;
-        $this->get_file($this->file);
+        $this->get_files();
+        $this->read_files();
     }
 
-    public function get_file($file)
+    public function get_files()
     {
-        return $this->file_path = realpath($file);
+        $files = [];
+        foreach (glob('./csv/*.csv') as $file) {
+            $files[] = $file;
+        }
+
+        return $this->files = $files;
+    }
+
+    public function read_files()
+    {
+        foreach ($this->files as $file) {
+            $read = new \SplFileObject($file);
+            echo $read.PHP_EOL;
+        }
     }
 }
+
+$csv_importer = new CsvImporter();
