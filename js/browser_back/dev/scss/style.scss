@@ -1,0 +1,43 @@
+.inner {
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    .item {
+        align-items: center;
+        background: #fff;
+        display: flex;
+        height: 10vh;
+        justify-content: center;
+        margin-top: 20px;
+        width: 30%;
+    }
+}
+
+.page {
+    &_1 {
+    }
+    &_2 {
+        .item {
+            background: aquamarine;
+        }
+    }
+    &_3 {
+        .item {
+            background: indianred;
+        }
+    }
+}
+
+.wrap {
+    background: #ccc;
+    margin: auto;
+    width: 90vw;
+}
