@@ -15,6 +15,7 @@ if(cookies_array) {
         }
     }
     if(judge == true) {
+        
         $(window).scrollTop(result['cookie_rwt']);
     }
 }
