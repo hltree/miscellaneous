@@ -4,8 +4,7 @@ const
     plumber = require('gulp-plumber'),
     sass = require('gulp-sass'),
     pug = require('gulp-pug'),
-    uglify = require('gulp-uglify'),
-    notify = require('gulp-notify')
+    notify = require('gulp-notify');
 
 gulp.task('pug', () => {
     return (
@@ -28,7 +27,6 @@ gulp.task('sass', () => {
 gulp.task('js', () => {
     return (
         gulp.src('./dev/js/*.js')
-            .pipe(uglify())
             .pipe(plumber({errorHandler: notify.onError("Error: <=% error.message %>")}))
             .pipe(gulp.dest('./build/js'))
     );
