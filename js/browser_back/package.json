@@ -1,0 +1,20 @@
+{
+  "name": "browser_back",
+  "version": "1.0.0",
+  "description": "Browser Back Save location",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
+}
