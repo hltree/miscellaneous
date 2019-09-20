@@ -6,14 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-collections = "*"
 matplotlib = "*"
-sys = "*"
-glob = "*"
+collections = "*"
 
 [requires]
 python_version = "3.7"
-
-[scripts]
-rf = "python3 app.py file"
-rd = "python3 app.py dir"
