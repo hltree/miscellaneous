@@ -39,3 +39,19 @@ for v in r:
 f = open('./result.txt','w')
 f.write(res)
 f.close()
+
+
+# グラフ化してみる
+x = []
+y = []
+for v in r:
+    x.append(v[0])
+for v in r:
+    y.append(v[1])
+
+plot.figure(figsize=(15,8))
+plot.rcParams["font.size"] = 10
+plot.xticks(rotation=90)
+plot.bar(x, y)
+plot.xlim(-1,40)
+plot.savefig('./figure.png')
