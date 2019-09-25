@@ -16,3 +16,10 @@ Node v12.3.1
 npm v6.9.0
 <br />
 yarn v1.17.3
+
+# Usage
+
+```
+$ yarn install
+$ yarn start
+```
