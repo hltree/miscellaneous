@@ -1,0 +1,3 @@
+devServer: {
+    contentBase: './dev'
+},
