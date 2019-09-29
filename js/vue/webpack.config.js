@@ -1,11 +1,35 @@
 const
-    path = require('path');
+    path = require('path'),
+    VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/js/app.js',
-    output: {
-        filename: 'bundle.js'
-        path: path.join(__dirname, 'public/js')
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.js$/,
+                loader: 'bable-loader'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
+    },
+    plugins: [
+        new VueLoaderPlugin()
+    ],
+    resolve: {
+        extensions: ['.vue', '.js'],
+        alias: {
+            'vue': 'vue/dist/vue.esm.js'
+        }
     }
 };
