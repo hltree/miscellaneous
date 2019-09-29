@@ -15,10 +15,22 @@ module.exports = {
                 loader: 'bable-loader'
             },
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: [
                     'vue-style-loader',
-                    'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+
+                    }
                 ]
             }
         ]
