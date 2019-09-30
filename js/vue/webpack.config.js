@@ -21,17 +21,24 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
+                            importLoaders: 1,
                             sourceMap: true
                         },
                     },
                     {
                         loader: 'sass-loader',
                         options: {
+                            plugins: [
+                                require('postcss-nested')
+                            ],
                             sourceMap: true
                         }
-
                     }
                 ]
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-plain-loader'
             }
         ]
     },
@@ -43,5 +50,10 @@ module.exports = {
         alias: {
             'vue': 'vue/dist/vue.esm.js'
         }
+    },
+    devServer: {
+        compress: true,
+        port: 9000,
+        open: true
     }
 };
