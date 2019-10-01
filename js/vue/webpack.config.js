@@ -4,6 +4,8 @@ const
 
 module.exports = {
     mode: 'development',
+    entry: './assets/src/index.js',
+    watch: true,
     module: {
         rules: [
             {
@@ -12,7 +14,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'bable-loader'
+                loader: 'babel-loader'
             },
             {
                 test: /\.scss$/,
