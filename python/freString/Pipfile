@@ -14,6 +14,9 @@ glob = "*"
 [requires]
 python_version = "3.7"
 
+[pipenv]
+allow_prereleases = true
+
 [scripts]
 rf = "python3 app.py file"
 rd = "python3 app.py dir"
