@@ -7,3 +7,7 @@ class Hello():
             print('Not name...');
 
 Hello('kiona');
+
+class init():
+    def __init__(self, *args, **kwargs):
+        super(CLASS_NAME, self).__init__(*args, **kwargs)
