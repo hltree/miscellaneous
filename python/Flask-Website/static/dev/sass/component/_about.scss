@@ -1,0 +1,23 @@
+.about {
+	display: flex;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 20px;
+	max-width: calc(960 + 40) + 'px';
+	width: calc((960 / 1280) * 100) + '%';
+	&-item {
+		width: calc((450 / 960) * 100) + '%';
+		&-img {
+		}
+		&-text {
+			font-size: 14px;
+			margin-top: 30px;
+		}
+		&-title {
+			font-size: 18px;
+			font-weight: 700;
+			text-align: center;
+		}
+	}
+}

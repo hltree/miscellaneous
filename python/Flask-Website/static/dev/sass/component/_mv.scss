@@ -1,0 +1,47 @@
+.mv {
+	background-color: #ccc;
+	height: 100vh;
+	position: relative;
+	width: 100%;
+	&-title {
+		color: #fff;
+		font-size: 26px;
+		left: 50%;
+		letter-spacing: .12em;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50% , -50%);
+		writing-mode: vertical-lr;
+		z-index: 2;
+		@extend .font-yu_mincho;
+	}
+	.swiper-container {
+		height: 100%;
+		position: relative;
+		width: 100%;
+		&:after {
+			background-color: #000;
+			content: "";
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: .3;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			z-index: 1;
+		}
+		.swiper-wrapper {
+			height: 100%;
+			width: 100%;
+			.swiper-slide {
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+}

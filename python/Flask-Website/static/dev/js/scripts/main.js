@@ -1,0 +1,227 @@
+//import BrowserDetect from './BrowserDetect';
+import Responsive from './Responsive';
+import SmoothScroll from './SmoothScroll';
+import Accordion from './Accordion';
+import Tab from './Tab';
+import SpNavi from './SpNavi';
+import ToTop from './ToTop';
+import DropDownMenu from './DropDownMenu';
+import BlockLink from './BlockLink';
+import Gmap from './Gmap';
+//import matchheight from 'jquery-match-height';
+import inview from 'jquery-inview';
+import link_icon from './link_icon';
+import {TweenMax, TimelineMax} from "gsap";
+import Swiper from 'swiper';
+/* ===============================================
+Check responsive state
+=============================================== */
+// const r = new Responsive();
+
+// $(window).on('resize',function(){
+// check is responsive;
+// 	console.log(r.state()());
+// });
+// check is mobile;
+// alert(r.isPhone());
+/* ===============================================
+SP Navi
+=============================================== */
+//通常盤
+let param = {
+	target:'#spnavi',
+	trigger:'.btn_sp_navi',
+	filter:'resposive_flg',
+	speed:200
+};
+const spnavi = new SpNavi(param);
+spnavi.exec();
+
+//execに可変引数で処理を渡してナビの開閉時に処理させるサンプル
+//例として、SPナビでアコーディオンを開くたびにiScrollをリセットする
+// let spnav_accordion_1 = (scroller)=>{
+// 	$('#scroller .inner > ul > li > span').off();
+// 	$('#scroller .inner > ul > li > span').on('click',function(){
+// 		let $parent = $(this).parent('li');
+// 		let $child = $(this).next('.gnavi-child');
+// 		let status = $child.css('display');
+
+// 		if(status == 'block'){
+// 			$child.slideUp(300,function(){
+// 				scroller.refresh();
+// 			});
+// 			$parent.removeClass('active');
+// 		}else{
+// 			$child.slideDown(300,function(){
+// 				scroller.refresh();
+// 			});
+// 			$parent.addClass('active');
+// 		}
+
+// 		return false;
+// 	});
+// }
+// spnavi.exec(spnav_accordion_1);
+/* ===============================================
+box link
+=============================================== */
+// let box_link = new BlockLink();
+// box_link.exec('.box_link');
+/* ===============================================
+Smooth Scroll
+=============================================== */
+const sms = new SmoothScroll();
+sms.exec();
+/* ===============================================
+To Top
+show/hide toggle
+=============================================== */
+const totop = new ToTop('#totop','#global_footer',100,400);
+totop.exec();
+
+/**
+ * 外部リンク・PDF・Word・Exlsに_blankの自動付与
+ *
+ */
+link_icon();
+/* ===============================================
+DropDown
+
+markp:
+<ul>
+	<li>
+		<a href=""></a>
+		<ul class="child">
+			<li>
+				<a href=""></a>
+			</li>
+			<li>
+				<a href=""></a>
+			</li>
+			<li>
+				<a href=""></a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href=""></a>
+	</li>
+	<li>
+		<a href=""></a>
+	</li>
+</ul>
+=============================================== */
+// const dd = new DropDownMenu('ul li','.child',200);
+// dd.exec();
+/* ===============================================
+Accordion
+
+markp:
+<dl>
+	<dt></dt>
+	<dd></dd>
+	<dt></dt>
+	<dd></dd>
+	<dt></dt>
+	<dd></dd>
+</dl>
+=============================================== */
+// const ac = new Accordion($('dt'));
+// ac.exec();
+/* ===============================================
+Tab
+
+markup:
+<div class="tc">
+	<ul>
+		<li>tab1</li>
+		<li>tab2</li>
+		<li>tab3</li>
+	</ul>
+	<div class="tc_content">
+		tabcon1tabcon1tabcon1tabcon1tabcon1tabcon1
+	</div>
+	<div class="tc_content">
+		tabcon2tabcon2tabcon2tabcon2tabcon2tabcon2
+	</div>
+	<div class="tc_content">
+		tabcon3tabcon3tabcon3tabcon3tabcon3tabcon3
+	</div>
+</div>
+=============================================== */
+// const tab = new Tab('.tc li','.tc .tc_content');
+// tab.exec();
+
+// /* gmap
+// ----------------------- */
+// let gmap = new Gmap();
+// $(window).on('load',function(){
+// 	gmap.exec();
+// });
+
+/* ===============================================
+instagram with infinityScroll
+
+markup:
+<div class="slide--instagram_wrapper" id="insragram">
+	<div class="slide--instagram">
+		<div id="js-slide--instagram">
+			<ul class="inner"></ul>
+		</div>
+	</div>
+</div>
+=============================================== */
+/**
+ *
+ * @param {sring} requet_url instagramのリクエストURL ./_instagram_template.htmlにhtmlテンプレートサンプルあり
+ * @param {element} append_target 読み込んだ写真を追加する要素
+ * @param {element} slide_target スライドショーさせる要素
+ */
+// import instagram from './instagram';
+// instagram('request_url','#js-slide--instagram .inner','#js-slide--instagram');
+
+
+
+$(function(){
+	$('.js-inview-item').each(function(){
+		let _this = $(this);
+		$(_this).on('inview',function(){
+			$(_this).addClass('_view');
+		});
+	});
+});
+
+
+$(function(){
+	var mv_slide = $('.mv-slide').swiper({
+		autoplay: 4000,
+		effect: 'fade',
+		loop: true,
+		slidesPerView: 1,
+		speed: 2000
+	});
+});
+
+$(function(){
+	header_Active();
+	$(window).on('scroll resize',function(){
+		header_Active();
+	});
+});
+
+const header_Active = () => {
+	const mv_height = $('.mv').height();
+	let header_position = $('.global-header').offset().top;
+
+	if( $('body').hasClass('home') ) {
+		if( mv_height < header_position ) {
+			$('.global-header').addClass('_active');
+		}else{
+			if( $('.global-header').hasClass('_active') ) {
+				$('.global-header').removeClass('_active');
+			}
+		}
+	}else{
+		$('.global-header').addClass('_active');
+	}
+}

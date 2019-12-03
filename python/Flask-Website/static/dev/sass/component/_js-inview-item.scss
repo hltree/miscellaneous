@@ -1,0 +1,10 @@
+.js-inview-item {
+	opacity: 0;
+	position: relative;
+	top: 40px;
+	transition: opacity .6s , top .6s;
+	&._view {
+		opacity: 1;
+		top: 0;
+	}
+}
