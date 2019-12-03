@@ -1,0 +1,38 @@
+.js-Slider {
+	margin: 40px auto;
+	max-width: 600px;
+	&-btn {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		&._next {
+			right: 0;
+			transform: translate(30px, -50%);
+			&:before {
+				border: 10px solid;
+				border-color: #fff #fff #fff #000;
+				content: "";
+				display: block;
+			}
+		}
+		&._prev {
+			left: 0;
+			transform: translate(-30px, -50%);
+			&:before {
+				border: 10px solid;
+				border-color: #fff #000 #fff #fff;
+				content: "";
+				display: block;
+			}
+		}
+	}
+	&-slide {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 200px;
+		width: 300px;
+	}
+	&-wrap {
+	}
+}

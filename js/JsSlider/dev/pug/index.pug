@@ -1,0 +1,11 @@
+extends layout.pug
+block slug
+	- slug = 'home'
+block contents
+	.js-Slider
+		.js-Slider-inner
+			.js-Slider-wrap
+				- for(var i=1; i <= 5; i++)
+					.js-Slider-slide(style=`background-image:url(http://placehold.jp/1000x1000.png?text=` + i + ')')
+		.js-Slider-btn._prev
+		.js-Slider-btn._next
