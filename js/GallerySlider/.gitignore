@@ -1,0 +1,10 @@
+# Tools
+.DS_Store
+.idea
+
+# Not Traffic
+*.html
+node_modules
+package-lock.json
+yarn.lock
+build
