@@ -1,6 +1,7 @@
 ## JsSlider
 
-memomemomemo...
+未完成
+Fadeのスライダーしか作っていない
 
 
 ### Thanks!

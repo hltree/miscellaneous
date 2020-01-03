@@ -1,3 +1,7 @@
+## Memo
+
+Django使った方がいいと思う・・
+
 ## Usage
 
 ## Thanks
