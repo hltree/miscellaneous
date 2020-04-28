@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-    http.HandleFunc("/", func(w http.ResponseWritter, r *http.Request){
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
         log.Println("received request")
         fmt.Fprintf(w, "Hello Docker!!")
     })
