@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<form  id="form">
+<form id="form">
     <fieldset>
         <p>問い</p>
         <?php
