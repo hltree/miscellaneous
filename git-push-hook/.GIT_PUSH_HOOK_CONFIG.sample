@@ -1,0 +1,8 @@
+REPOSITORY_SSH_URL=git@github.com:hltree/miscellaneous.git
+REPOSITORY_BASE_BRANCH=master
+
+SERVER_HOST_NAME=172.20.30.4
+SERVER_USER_NAME=test-user
+SSH_IDENTITY_FILE_PATH=~/.ssh/id_rsa
+
+GIT_PULL_DIR_PATH=~/www/html/test-site
