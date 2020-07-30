@@ -12,9 +12,12 @@ if [[ -d $GIT_DIR ]]; then
 # 設定ファイルから#以外をよみこむ
 export $(cat $(dirname $0)/.git-push-hook-config | grep -v ^# | xargs);
 
-ssh -i $SSH_IDENTITY_FILE_PATH $SERVER_USER_NAME@$SERVER_HOST_NAME;
-cd $GIT_PULL_DIR_PATH;
-git clone $REPOSITORY_SSH_URL;
+ssh -i $SSH_IDENTITY_FILE_PATH $SERVER_USER_NAME@$SERVER_HOST_NAME <<EOC
+cd $GIT_PULL_DIR_PATH
+git clone $REPOSITORY_SSH_URL
+EOC
+
+exit 0
 EOS
 
     cat <<'EOS' > $GIT_DIR/hooks/pre-push
