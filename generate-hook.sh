@@ -13,7 +13,7 @@ export $(cat $(dirname $0)/.git-push-hook-config | grep -v ^# | xargs);
 
 while read local_ref local_sha1 remote_ref remote_sha1
 do
-  if [[ "${remote_ref##refs/heads/}" = $REPOSITORY_BASE_BRANCH ]]; then
+  #if [[ "${remote_ref##refs/heads/}" = $REPOSITORY_BASE_BRANCH ]]; then
     echo "Warning: pull to remote server, continue? [y/N]"
 
     exec < /dev/tty
@@ -27,7 +27,7 @@ do
     cd $GIT_PULL_DIR_PATH;
     git clone $REPOSITORY_SSH_URL;
     exit 0
-  fi
+  #fi
 done
 EOS
     chmod +x $GIT_DIR/hooks/pre-push
