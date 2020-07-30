@@ -30,7 +30,7 @@ do
   #fi
 done
 EOS
-    chmod +x $GIT_DIR/hooks/pre-push
+    chmod +x $GIT_DIR/hooks/post-receive
     exit 0
 else
   echo "Directory not exists..."
