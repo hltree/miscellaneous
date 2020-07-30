@@ -26,9 +26,9 @@ cd $GIT_PULL_DIR_PATH
 
 if [[ -d $GIT_PULL_DIR_PATH ]]; then
   if [[ -d $GIT_PULL_DIR_PATH/.git ]]; then
-    git clone $REPOSITORY_SSH_URL .
-  else
     git pull origin $REPOSITORY_BASE_BRANCH
+  else
+    git clone $REPOSITORY_SSH_URL .
   fi
 else
   echo "Server directory not exists..."
