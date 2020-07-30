@@ -5,7 +5,7 @@ GIT_DIR=$(dirname $0)/.git
 if [[ -d $GIT_DIR ]]; then
     echo "Directory exists!"
     mkdir $GIT_DIR/hooks
-    git config --local alias.push '!git push $1 $2 '"&& sh $GIT_DIR/hooks/deploy.sh"
+    git config --local alias.push '!git push $1 $2'" && sh $GIT_DIR/hooks/deploy.sh"
 
     cat <<'EOS' > $GIT_DIR/hooks/deploy.sh
 #!bin/bash
@@ -37,6 +37,7 @@ do
     case $ANSWER in "Y" | "y" | "yes" | "Yes" | "YES" ) echo "OK. pull start.";;
     * ) echo "push failed.";exit 1;;
     esac
+    exit 0
   fi
 done
 EOS
