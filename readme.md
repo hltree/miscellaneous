@@ -1,8 +1,3 @@
- ## Dogde
+# miscellaneous
  
- ````
- Doing one good deed everyday
- Study for me.
- ````
- 
- I hope this repository will help.
+ Miscellaneous code examples.
