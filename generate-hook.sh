@@ -37,7 +37,6 @@ do
     case $ANSWER in "Y" | "y" | "yes" | "Yes" | "YES" ) echo "OK. pull start.";;
     * ) echo "push failed.";exit 1;;
     esac
-    exit 0
   fi
 done
 EOS
