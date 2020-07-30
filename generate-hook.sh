@@ -5,7 +5,7 @@ GIT_DIR=$(dirname $0)/.git
 if [[ -d $GIT_DIR ]]; then
     echo "Directory exists!"
     mkdir $GIT_DIR/hooks
-    cat <<EOF > $GIT_DIR/hooks/pre-push
+    cat <<'EOS' > $GIT_DIR/hooks/pre-push
 #!/bin/bash
 
 echo '[warn] push to remote, continue? [y/N]'
@@ -18,7 +18,7 @@ case $answer in
     * ) echo '[error] push failed.';exit 1;;
 esac
 exit 0
-EOF
+EOS
     chmod +x $GIT_DIR/hooks/pre-push
     exit 0
 else
