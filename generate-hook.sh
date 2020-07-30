@@ -5,7 +5,7 @@ GIT_DIR=$(dirname $0)/.git
 if [[ -d $GIT_DIR ]]; then
     echo "Directory exists!"
     mkdir $GIT_DIR/hooks
-    cat <<'EOS' > $GIT_DIR/hooks/pre-push
+    cat <<'EOS' > $GIT_DIR/hooks/post-receive
 #!/bin/bash
 
 # 設定ファイルから#以外をよみこむ
@@ -13,13 +13,13 @@ export $(cat $(dirname $0)/.git-push-hook-config | grep -v ^# | xargs);
 
 while read local_ref local_sha1 remote_ref remote_sha1
 do
-  if [[ "${remote_ref##refs/heads/}" = "master" ]]; then
-    echo "Warning: push to remote master, continue? [y/N]"
+  if [[ "${remote_ref##refs/heads/}" = $REPOSITORY_BASE_BRANCH ]]; then
+    echo "Warning: pull to remote server, continue? [y/N]"
 
     exec < /dev/tty
     read ANSWER
 
-    case $ANSWER in "Y" | "y" | "yes" | "Yes" | "YES" ) echo "OK. push start.";;
+    case $ANSWER in "Y" | "y" | "yes" | "Yes" | "YES" ) echo "OK. pull start.";;
     * ) echo "push failed.";exit 1;;
     esac
 
