@@ -1,17 +1,19 @@
 #!/bin/bash
 # variables
 GIT_DIR=$(dirname $0)/.git
+export $(cat $GIT_DIR/hooks/.GIT_PUSH_HOOK_CONFIG | grep REPOSITORY_BASE_BRANCH | xargs);
+
 
 if [[ -d $GIT_DIR ]]; then
     echo "Directory exists!"
     mkdir $GIT_DIR/hooks
     echo $GIT_DIR/hooks/deploy.sh
-    git config --local alias.dpush '!git push $1 $2 && if $2 = '"$REPOSITORY_BASE_BRANCH; then sh $GIT_DIR/hooks/deploy.sh fi"
+    git config --local alias.dpush '!git push $1 $2 && if $2 = '"$REPOSITORY_BASE_BRANCH;then sh $GIT_DIR/hooks/deploy.sh;fi"
 
     cat <<'EOS' > $GIT_DIR/hooks/deploy.sh
 #!bin/bash
 # 設定ファイルから#以外をよみこむ
-export $(cat $(dirname $0)/.git-push-hook-config | grep -v ^# | xargs);
+export $(cat $(dirname $0)/.GIT_PUSH_HOOK_CONFIG | grep -v ^# | xargs);
 
 echo "Warning: pull to remote server, continue? [y/N]"
 exec < /dev/tty
