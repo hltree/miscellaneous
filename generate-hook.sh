@@ -6,7 +6,7 @@ if [[ -d $GIT_DIR ]]; then
     echo "Directory exists!"
     mkdir $GIT_DIR/hooks
     echo $GIT_DIR/hooks/deploy.sh
-    git config --local alias.push '!git push $1 $2'" && sh $GIT_DIR/hooks/deploy.sh"
+    git config --local alias.p 'git push $1 $2'" && sh $GIT_DIR/hooks/deploy.sh"
 
     cat <<'EOS' > $GIT_DIR/hooks/deploy.sh
 #!bin/bash
