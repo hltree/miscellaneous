@@ -19,9 +19,13 @@ do
     exec < /dev/tty
     read ANSWER
 
-    case $ANSWER in "Y" | "y" | "yes" | "Yes" | "YES" ) echo "OK. push start."; ssh -i $SSH_IDENTITY_FILE_PATH $SERVER_USER_NAME@$SERVER_HOST_NAME; cd $GIT_PULL_DIR_PATH; git clone $REPOSITORY_SSH_URL;
+    case $ANSWER in "Y" | "y" | "yes" | "Yes" | "YES" ) echo "OK. push start.";;
     * ) echo "push failed.";exit 1;;
     esac
+
+    ssh -i $SSH_IDENTITY_FILE_PATH $SERVER_USER_NAME@$SERVER_HOST_NAME;
+    cd $GIT_PULL_DIR_PATH;
+    git clone $REPOSITORY_SSH_URL;
     exit 0
   fi
 done
