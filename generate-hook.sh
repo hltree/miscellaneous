@@ -5,7 +5,8 @@ GIT_DIR=$(dirname $0)/.git
 if [[ -d $GIT_DIR ]]; then
     echo "Directory exists!"
     mkdir $GIT_DIR/hooks
-    git config --local alias.push 'push && $GIT_DIR/hooks/deploy.sh'
+    git config --local alias.push 'push && sh $GIT_DIR/hooks/deploy.sh'
+
     cat <<'EOS' > $GIT_DIR/hooks/deploy.sh
 #!bin/bash
 # 設定ファイルから#以外をよみこむ
@@ -15,7 +16,6 @@ ssh -i $SSH_IDENTITY_FILE_PATH $SERVER_USER_NAME@$SERVER_HOST_NAME;
 cd $GIT_PULL_DIR_PATH;
 git clone $REPOSITORY_SSH_URL;
 EOS
-
 
     cat <<'EOS' > $GIT_DIR/hooks/pre-push
 #!/bin/bash

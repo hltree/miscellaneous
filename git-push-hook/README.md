@@ -8,10 +8,10 @@ hookは `git push` 時に `.git-push-hook-config` に設定された環境にコ
 
 ## Usage
 
-### 1. .git-push-hook-config(設定ファイル)をコピーしてください
+### 1. .git-push-hook-config(設定ファイル)を.git内にコピーしてください
 
 ```
-$ cp .git-push-hook-config.sample .git-push-hook-config
+$ cp .git-push-hook-config.sample .git/.git-push-hook-config
 ```
 
 ### 2. 1で作成したファイルとshファイルを移動させてください
