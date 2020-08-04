@@ -10,7 +10,7 @@ hookは `git push` 時に `.GIT_PUSH_HOOK_CONFIG` に設定された環境にコ
 
 ### 1. .GIT_PUSH_HOOK_CONFIGの設定ファイルを作成してください
 
-.GIT_PUSH_HOOK_CONFIG.sampleをリネームし、.git内にコピーしてください
+.GIT_PUSH_HOOK_CONFIG.sampleをリネームし、.gitのhook内にコピーしてください
 
 ```
 $ cp .GIT_PUSH_HOOK_CONFIG.sample .git/.GIT_PUSH_HOOK_CONFIG
