@@ -29,7 +29,7 @@ $ cp .GIT_PUSH_HOOK_CONFIG.sample .git/.GIT_PUSH_HOOK_CONFIG
 
 ### 2. 1で作成したファイルとshファイルを移動させてください
 
-1で作成した `.GIT_PUSH_HOOK_CONFIG` と `generate-hook.sh` を適用させたいgitリポジトリのディレクトリに移動させてください。
+`generate-hook.sh` を.gitディレクトリに移動させてください。
 
 ```
 $ mv .GIT_PUSH_HOOK_CONFIG generate-hook.sh ${target}
