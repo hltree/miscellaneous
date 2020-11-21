@@ -67,3 +67,28 @@ $ python -m arg
 結果 => /Users/hltree/develop/Dogde/python/exam/part2/arg.py
 ```
 
+## 対話モード
+
+コマンドをttyから読み込んでいるとき、インタープリタは「対話モード」にあるという。
+
+このモードでコマンド入力を促すプロンプトを「プライマリプロンプト」といい、これは通常、大なり記号３つである(>>>)。
+継続行には「セカンダリプロンプト」が出てくるが、これはデフォルトではドット３つである（...）。
+インタープリタは、バージョンと著作権からはじまるウェルカムメッセージを表示してからプロンプトを出す。
+
+```
+$ python
+Python 3.7.4 (default, Mar 29 2020, 15:14:09)
+[Clang 11.0.3 (clang-1103.0.32.29)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+```
+
+複数行で論理構成する場合には、継続行が必要である。
+例えばif文は次のようになる。
+
+```
+>>> judge = True
+>>> if judge:
+...  print('judge is true')
+...
+judge is true
+```
