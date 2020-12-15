@@ -1,0 +1,9 @@
+{
+  "name": "ios_dead_zone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "honkit": "^3.6.15"
+  }
+}
