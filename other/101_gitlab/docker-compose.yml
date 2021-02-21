@@ -1,0 +1,43 @@
+version: '2.3'
+
+services:
+  redis:
+    restart: always
+    image: redis:5.0.9
+    command:
+      - --loglevel warning
+    volumes:
+      - redis-data:/var/lib/redis:Z
+
+  postgresql:
+    restart: always
+    image: sameersbn/postgresql:12-20200524
+    volumes:
+      - postgresql-data:/var/lib/postgresql:Z
+    env_file:
+      - .env
+
+  gitlab:
+    restart: always
+    image: sameersbn/gitlab:13.8.4
+    depends_on:
+      - redis
+      - postgresql
+    ports:
+      - "10080:80"
+      - "10022:22"
+    volumes:
+      - gitlab-data:/home/git/data:Z
+    healthcheck:
+      test: ["CMD", "/usr/local/sbin/healthcheck"]
+      interval: 5m
+      timeout: 10s
+      retries: 3
+      start_period: 5m
+    env_file:
+      - .env
+
+volumes:
+  redis-data:
+  postgresql-data:
+  gitlab-data:
