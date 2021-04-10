@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="section _lower">
+    <div class="lower-header">
+        <h2 class="lower-header-title">結果</h2>
+    </div>
+    <p class="result-t-title">{{ result_data.name }}</p>
+    <a href="{{ result_data.url }}" target="_blank" class="result-link">詳細</a>
+    <br><br>
+    <a href="/" class="button">戻る</a>
+</section>
+{% endblock %}

@@ -1,0 +1,265 @@
+@charset "UTF-8";
+.text_indent_none {
+    text-indent: 100%;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden
+}
+a,
+abbr,
+acronym,
+address,
+applet,
+b,
+big,
+blockquote,
+body,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+tt,
+u,
+ul,
+var {
+    background: none repeat scroll 0 0;
+    border: 0;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline
+}
+body {
+    position: relative;
+    background-color: #fff;
+    font-size: 14px;
+    color: #000;
+    line-height: 1.5;
+    overflow-wrap: break-word
+}
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2
+}
+caption,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead {
+    margin: 0;
+    outline: 0 none;
+    padding: 0
+}
+td,
+th {
+    vertical-align: top;
+    background: none repeat scroll 0 0
+}
+div,
+p,
+span {
+    line-height: inherit
+}
+a {
+    color: #00f;
+    text-decoration: none
+}
+a img {
+    border: none;
+    outline: 0 !important
+}
+a:hover {
+    text-decoration: none;
+    color: red
+}
+button:focus {
+    outline: 0 !important
+}
+a:focus,
+button:active,
+div:focus,
+img:focus,
+p:focus {
+    outline: none
+}
+ol,
+ul {
+    list-style: none outside none
+}
+fieldset,
+img {
+    vertical-align: bottom
+}
+blockquote,
+q {
+    quotes: none
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+    content: none
+}
+ins {
+    text-decoration: none
+}
+del {
+    text-decoration: line-through
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+br {
+    letter-spacing: 0
+}
+hr {
+    border: 0;
+    height: 0;
+    visibility: hidden
+}
+input,
+select,
+textarea {
+    font-size: 99%
+}
+code,
+pre {
+    font: 100% monospace
+}
+img {
+    max-width: 100%;
+    height: auto
+}
+input[type=submit],
+input[type=text],
+textarea {
+    -webkit-appearance: none
+}
+@media only screen and(max-width:768px) {
+    .pc,
+    .pc-content {
+        display: none
+    }
+}
+.sp,
+.sp-content {
+    display: none
+}
+@media only screen and(max-width:768px) {
+    .sp,
+    .sp-content {
+        display: block
+    }
+}
+body {
+    font-family: 游ゴシック体, Yu Gothic, YuGothic, Helvetica Neue, Helvetica, Arial, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic ProN, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.font-yu_mincho {
+    font-family: YuMincho, Yu Mincho, 游明朝体, 游明朝, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, ＭＳ ゴシック, MS Gothic, メイリオ, Meiryo, serif
+}
+.font-opensans {
+    font-family: Open Sans, sans-serif
+}
+.wrap {
+    max-width: 1280px
+}
+.form,
+.wrap {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    width: 100%
+}
+.form {
+    max-width: 600px;
+    text-align: center
+}
+.form-select {
+    margin-right: 10px
+}
+.form-select,
+.form-submit {
+    height: 40px;
+    width: 80px
+}
+.form-text {
+    margin: 20px 0
+}
+.global_header {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #ccc;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 60px;
+    width: 100%
+}
+.global_header-inner {
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding: 0 20px;
+    width: 100%
+}
+.global_header-title {
+    font-size: 24px;
+    font-weight: 700
+}

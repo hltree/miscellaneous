@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="section">
+    <form action="result" method="POST" class="form">
+        <p class="form-text">選択肢を選んで送信するとランチを自動で選んでくれます！</p>
+        <div class="form-post">
+            <select name="select" class="form-select">
+                {% for val in select_data %}
+                    <option value="{{ val.name }}">{{ val.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" name="submit" class="form-submit" />
+        </div>
+    </form>
+</section>
+{% endblock %}

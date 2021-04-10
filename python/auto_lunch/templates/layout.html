@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    {% include "./config/_meta.html" %}
+</head>
+<body id="top" class="{{ tag }}">
+<header class="global_header">
+    <div class="global_header-inner">
+        <h1 class="global_header-title">自動ランチ選択</h1>
+    </div>
+</header>
+<main class="wrap">
+    {% block content %}
+    {% endblock %}
+</main>
+<footer class="global_footer">
+</footer>
+</body>
+</html>
