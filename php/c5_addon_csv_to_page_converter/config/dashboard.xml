@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<concrete5-cif version="1.0">
+    <singlepages>
+        <page name="Csv To Page Converter" path="/dashboard/csv_to_page_converter"
+              filename="/dashboard/csv_to_page_converter/view.php" pagetype="" description=""
+              package="csv_to_page_converter"
+              global="false"
+        />
+    </singlepages>
+</concrete5-cif>
