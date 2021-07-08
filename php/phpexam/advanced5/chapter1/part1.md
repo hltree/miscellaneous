@@ -95,3 +95,16 @@ PHPの関数 `php_info()` は、PHPをインストールしたときの情報や
 この関数を使うと、PHP拡張モジュールがインストールされた場所や `php.ini` ファイルの場所がわかったりする。
 
 `<?php phpinfo(); ?>` のように `echo` は必要なく、描画できる。
+
+### フォーム
+
+フォームの値を取得するには `$_POST` および `$_GET` を使用します。
+PHP 5.3以前のバージョンでは、 `REGISTER_GLOBALS` の値をoffにしないとこれは利用できない（デフォルトではoffになっている）
+
+### データベース
+
+MySQL, PostgreSQL, Oracle, Sybase, SQLite, ODBC準拠のデータベースなどさまざまなデータベースを利用できる。
+
+- mysqli
+
+[https://www.php.net/manual/ja/class.mysqli.php](https://www.php.net/manual/ja/class.mysqli.php)
