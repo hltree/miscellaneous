@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "ES2015",
+    "module": "ES2015",
+    "lib": [
+      "DOM", "ES2019"
+    ]
+  }
+}
