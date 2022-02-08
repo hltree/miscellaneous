@@ -19,3 +19,10 @@ componentとporojectの使い分けが悩むと思うのでメモ
 // /* layout
 // ----------------------- */
 @use "layout";
+
+.posts {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 85vw;
+}
