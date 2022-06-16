@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  php:
+    container_name: app-doc_php
+    build: ./docker/php
+    volumes:
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./html:/var/www/html
+    ports:
+      - 80:80
+    networks:
+      - app
+  ngrok:
+    container_name: app-doc_ngrok
+    image: wernight/ngrok:latest
+    ports:
+      - 4040:4040
+    environment:
+      - NGROK_AUTH=27m02PDatn2fLXwW0vmQvSdzL8m_6r1XEavqunxdcGDR9dLUt
+      - NGROK_PORT=app-doc_php
+      - NGROK_HEADER=localhost:80
+    networks:
+      - app
+networks:
+  app:
