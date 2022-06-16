@@ -1,0 +1,12 @@
+{
+  "language": "ja",
+  "title": "Shopifyアプリの",
+  "description": "This is a gitbook example",
+  "plugins": ["anchors", "image-captions"],
+  "pluginsConfig": {
+    "image-captions": {
+      "caption": "_CAPTION_",
+      "align": "right"
+    }
+  }
+}

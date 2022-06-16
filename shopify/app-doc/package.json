@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "gitbook-plugin-anchors": "^0.7.1",
+    "gitbook-plugin-image-captions": "^3.1.0",
+    "honkit": "^3.7.3"
+  }
+}
