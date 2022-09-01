@@ -8,17 +8,29 @@
 情報収集（RSSフィード配信）チャンネル
 
 _hatebu
+
 -general
+
 110_itmedia
+
 architecture
+
 blog-ja
+
 lang-css
+
 lang-javascript
+
 lang-php
+
 news-it-ja
+
 random
+
 security
+
 web-design
+
 web-front
 
 ## PHPユーザーズ(日本語)
