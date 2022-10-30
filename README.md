@@ -1,3 +1,3 @@
 # miscellaneous
  
- Miscellaneous code examples.
+Miscellaneous code examples.
